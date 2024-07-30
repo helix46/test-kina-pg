@@ -53,3 +53,9 @@
 /node_modules/prettier/plugins/yaml.d.ts
 /node_modules/prettier/plugins/yaml.js
 /node_modules/prettier/plugins/yaml.mjs
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/modules.xml
+/.idea/prettier.xml
+/.idea/codeStyles/Project.xml
+/.idea/test-kina-pg.iml
+/.idea/vcs.xml
