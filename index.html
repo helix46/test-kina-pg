@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://devegateway.kinabank.com.pg/kina/js/kbl-ec.js"></script>
+    <link
+      href="https://devegateway.kinabank.com.pg/kina/css/kbl-ec.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+  </head>
+  <body>
+    <div style="max-width: 500px">
+      <form
+        id="kblPaymentForm"
+        method="POST"
+        target="kblpaymentiframe"
+        action="https://devegateway.kinabank.com.pg/cgi-bin/cgi_link"
+      >
+        <div
+          style="
+            display: grid;
+            grid-template-columns: auto auto;
+            column-gap: 10px;
+          "
+        >
+          <label for="AMOUNT">AMOUNT</label>
+          <input type="text" id="AMOUNT" name="AMOUNT" value="" />
+
+          <label for="CURRENCY">CURRENCY</label>
+          <input type="text" id="CURRENCY" name="CURRENCY" value="" />
+
+          <label for="ORDER">ORDER</label>
+          <input type="text" id="ORDER" name="ORDER" value="" />
+
+          <label for="DESC">DESC</label>
+          <input type="text" id="DESC" name="DESC" value="" />
+
+          <label for="MERCH_NAME">MERCH_NAME</label>
+          <input type="text" id="MERCH_NAME" name="MERCH_NAME" value="" />
+
+          <label for="MERCH_URL">MERCH_URL</label>
+          <input type="text" id="MERCH_URL" name="MERCH_URL" value="" />
+
+          <label for="MERCHANT">MERCHANT</label>
+          <input type="text" id="MERCHANT" name="MERCHANT" value="" />
+
+          <label for="TERMINAL">TERMINAL</label>
+          <input type="text" id="TERMINAL" name="TERMINAL" value="" />
+
+          <label for="EMAIL">EMAIL</label>
+          <input type="text" id="EMAIL" name="EMAIL" value="" />
+
+          <label for="TRTYPE">TRTYPE</label>
+          <input type="text" id="TRTYPE" name="TRTYPE" value="" />
+
+          <label for="COUNTRY">COUNTRY</label>
+          <input type="text" id="COUNTRY" name="COUNTRY" value="" />
+
+          <label for="MERCH_GMT">MERCH_GMT</label>
+          <input type="text" id="MERCH_GMT" name="MERCH_GMT" value="" />
+
+          <label for="TIMESTAMP">TIMESTAMP</label>
+          <input type="text" id="TIMESTAMP" name="TIMESTAMP" value="" />
+
+          <label for="NONCE">NONCE</label>
+          <input type="text" id="NONCE" name="NONCE" value="" />
+
+          <label for="BACKREF">BACKREF</label>
+          <input type="text" id="BACKREF" name="BACKREF" value="" />
+
+          <label for="P_SIGN">P_SIGN</label>
+          <input type="text" id="P_SIGN" name="P_SIGN" value="" />
+        </div>
+      </form>
+      <br />
+      <button type="button" onclick="submitPaymentForm2()">Pay by Cards</button
+      ><br />
+      <br />
+
+      <button type="button" onclick="submitPaymentForm2('bank-transfer')">
+        Bank Transfer
+      </button>
+      <br />
+
+      <div id="kbliframediv" class="kbliframeoverlay">
+        <div id="kbliframeinnerdiv">
+          <iframe id="kblpaymentiframe" name="kblpaymentiframe"></iframe>
+        </div>
+      </div>
+    </div>
+    <script src="test-kina-pg.js"></script>
+  </body>
+</html>
