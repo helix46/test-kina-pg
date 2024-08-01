@@ -1,11 +1,12 @@
 function setValues() {
-  document.getElementById("TERMINAL").value = "99999999";
+  document.getElementById("TERMINAL").value = "99999001";
   document.getElementById("TRTYPE").value = "1";
   document.getElementById("AMOUNT").value = "11.48";
   document.getElementById("CURRENCY").value = "PGK";
-  document.getElementById("ORDER").value = "771446";
-  document.getElementById("MERCHANT").value = "123456789012345";
-  document.getElementById("EMAIL").value = "developer@sample.com.au";
+  document.getElementById("ORDER").value =
+    "771446" + Math.floor(1000 + Math.random() * 9000);
+  document.getElementById("MERCHANT").value = "000000099999001";
+  document.getElementById("EMAIL").value = "developer@memberwizard.com.au";
   document.getElementById("BACKREF").value =
     "https://testmemberwizard.azurewebsites.net/api/kinabank/webhook";
   document.getElementById("TIMESTAMP").value = this.getTimeStamp();
@@ -23,17 +24,17 @@ function getTimeStamp() {
   const d = new Date();
   // YYYYMMDDHHMMSS
   const s =
-    d.getFullYear() +
+    d.getUTCFullYear() +
     "" +
-    this.pad2(d.getMonth() + 1) +
+    this.pad2(d.getUTCMonth() + 1) +
     "" +
-    this.pad2(d.getDate()) +
+    this.pad2(d.getUTCDate()) +
     "" +
-    this.pad2(d.getHours()) +
+    this.pad2(d.getUTCHours()) +
     "" +
-    this.pad2(d.getMinutes()) +
+    this.pad2(d.getUTCMinutes()) +
     "" +
-    this.pad2(d.getSeconds());
+    this.pad2(d.getUTCSeconds());
   console.log(s);
   return s;
 }
@@ -80,6 +81,6 @@ function getP_SIGN() {
   s += this.getFieldString("NONCE");
 
   document.getElementById("P_SIGN").value = this.getEncryptedValue(s);
- }
+}
 
 setValues();
