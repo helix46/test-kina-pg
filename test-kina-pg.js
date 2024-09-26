@@ -8,9 +8,8 @@ function setValues() {
   document.getElementById("MERCHANT").value = "000000099999001";
   document.getElementById("EMAIL").value = "developer@memberwizard.com.au";
 
-  // document.getElementById("BACKREF").value =
-  //   "https://testmemberwizard.azurewebsites.net/api/kinabank/webhook";
-  document.getElementById("BACKREF").value = "https://test-40f84.web.app/";
+  document.getElementById("BACKREF").value =
+    "https://testmemberwizard.azurewebsites.net/api/kinabank/webhook";
 
   document.getElementById("TIMESTAMP").value = this.getTimeStamp();
   document.getElementById("MERCH_NAME").value = "Books Online Inc.";
