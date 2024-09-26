@@ -1,0 +1,5 @@
+Create a payment page that displays similar info to Stripe page
+Send sufficient info in backref to be able to redirect to the correct page
+Implement getEncryptedValue on the server to protect the secret key
+
+

@@ -18,6 +18,7 @@ function setValues() {
   document.getElementById("MERCH_GMT").value = "";
   document.getElementById("DESC").value = "IT Books. Qty: 2";
   document.getElementById("NONCE").value = "F2B2DD7E603A7ADA";
+  document.getElementById("META_DATA").value = "test data";
 
   this.getP_SIGN();
 }
